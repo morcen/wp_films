@@ -1,5 +1,8 @@
 <?php
 
+//load the Film Details metabox
+require_once('functions-details.php');
+
 // enqueue the parent theme stylesheets first and child theme last
 add_action('wp_enqueue_scripts', 'unite_enqueue_styles');
 function unite_enqueue_styles()
