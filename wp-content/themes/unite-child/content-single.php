@@ -29,22 +29,22 @@
         $film_details = get_post_meta(get_the_ID());
 
         ?>
-        <ul>
+        <ul class="film-details">
             <li>
-                <div class="label">Genre</div>
-                <div class="value">
+                <div class="film-detail--label">Genre</div>
+                <div class="film-detail--value">
                     <?php
-                    echo implode('/', array_map(function ($genre) {
+                    echo implode(', ', array_map(function ($genre) {
                         return $genre->name;
                     }, $genres));
                     ?>
                 </div>
             </li>
             <li>
-                <div class="label">Countries</div>
-                <div class="value">
+                <div class="film-detail--label">Countries</div>
+                <div class="film-detail--value">
                     <?php
-                    echo implode('/', array_map(function ($country) {
+                    echo implode(',', array_map(function ($country) {
                         return $country->name;
                     }, $country));
                     ?>
@@ -52,17 +52,17 @@
             </li>
             <li>
 
-                <div class="label">Ticket Price</div>
-                <div class="value">
+                <div class="film-detail--label">Ticket Price</div>
+                <div class="film-detail--value">$
                     <?php
-                    echo $film_details[FilmDetails::FILM_TICKET_PRICE][0];
+                    echo number_format($film_details[FilmDetails::FILM_TICKET_PRICE][0], 2);
                     ?>
                 </div>
             </li>
             <li>
 
-                <div class="label">Release Date</div>
-                <div class="value">
+                <div class="film-detail--label">Release Date</div>
+                <div class="film-detail--value">
                     <?php
                     echo $film_details[FilmDetails::FILM_RELEASE_DATE][0];
                     ?>

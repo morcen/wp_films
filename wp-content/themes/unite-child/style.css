@@ -14,3 +14,32 @@ Tags: purple, light, white, gray, one-column, two-columns, right-sidebar, fluid-
 
 This theme, like WordPress, is licensed under the GPL.
 */
+
+ul.film-details {
+    padding: 15px 0;
+}
+
+ul.film-details li {
+    list-style: none;
+    padding: 4px 0;
+}
+
+ul.film-details li > div.film-detail--label {
+    font-weight: 700;
+    display: table-cell;
+    min-height: 1px;
+    padding: 0 10px;
+    position: relative;
+    vertical-align: top;
+    text-align: right;
+    width: 140px;
+}
+
+ul.film-details li > div.film-detail--value {
+    display: table-cell;
+    min-height: 1px;
+    padding: 0 10px;
+    position: relative;
+    vertical-align: top;
+    text-align: left;
+}
