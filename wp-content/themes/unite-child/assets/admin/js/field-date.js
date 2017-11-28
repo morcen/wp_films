@@ -1,3 +1,6 @@
 jQuery(document).ready(function(){
-    jQuery('.datepicker').datepicker();
+    jQuery('.datepicker').datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
 });
