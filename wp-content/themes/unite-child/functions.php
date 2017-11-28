@@ -31,3 +31,27 @@ function create_film_post_type()
         ]
     );
 }
+
+// creates taxonomies for post type `film`
+add_action('init', 'create_film_taxonomies');
+function create_film_taxonomies()
+{
+    $taxonomies = ['genre', 'country', 'year', 'actors'];
+
+    foreach ($taxonomies as $taxonomy) {
+        register_taxonomy(
+            sprintf('film_%s', $taxonomy),
+            'film',
+            [
+                'labels' => [
+                    'name' => ucfirst($taxonomy),
+                    'add_new_item' => 'Add New Film ' . ucfirst($taxonomy),
+                    'new_item_name' => 'New Film Type ' . ucfirst($taxonomy),
+                ],
+                'show_ui' => true,
+                'show_tagcloud' => false,
+                'hierarchical' => true,
+            ]
+        );
+    }
+}
